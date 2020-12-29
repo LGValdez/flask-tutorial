@@ -8,20 +8,30 @@ class User():
         self.mobile = data.get("mobile", "")
         self.is_admin = data.get("is_admin", False)
 
+
+gabo = User(name="Gabo",
+            mobile=60792029,
+            is_admin=True)
+danny = User(name="Danny",
+             mobile=75115006,
+             is_admin=False)
+oliver = User(name="Oliver")
+user_list = [gabo, danny, oliver]
+
 @app.route("/")
 def home():
-    gabo = User(name="Gabo",
-                mobile=60792029,
-                is_admin=True)
-    danny = User(name="Danny",
-                 mobile=7511,
-                 is_admin=False)
-    oliver = User(name="Oliver")
-    users = [gabo, danny, oliver]
-    xargs = {
-        "users": users
+    kwargs = {
+        "current": "home"
     }
-    return render_template("index.html", **xargs)
+    return render_template("index.html", **kwargs)
+
+@app.route("/users")
+def users():
+    kwargs = {
+        "current": "users",
+        "users": user_list
+    }
+    return render_template("users/users.html", **kwargs)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
