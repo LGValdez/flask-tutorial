@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} 
+    Login Page | GabFlask 
+{% endblock %}
+
+{% block body_content %}
+    <form action="#" method="post">
+        {% if data.get('failed') %}
+            <p style="color: red">Last login attempt failed!</p>
+        {% endif %}
+        <p>Username: <input type="text" name="username"/></p>
+        <p>Password: <input type="text" name="password"/></p>
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+{% endblock %}

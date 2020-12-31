@@ -5,16 +5,16 @@
 {% endblock %}
 
 {% block body_content %}
-    {% for user in users %}
+    {% for contact in data.get('contacts', []) %}
         <p> Contact
-            {% if user.is_admin %}
+            {% if contact.is_admin %}
                 Admin
             {% else %}
                 User
             {% endif %}
-            {{ user.name }}
-            {% if user.mobile %}
-                - {{ user.mobile }}
+            {{ contact.name }}
+            {% if contact.mobile %}
+                - {{ contact.mobile }}
             {% endif %}
         </p>
     {% endfor %}
