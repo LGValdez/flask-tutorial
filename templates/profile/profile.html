@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %} 
+    {{ data.get('user',{}).get('name', 'Unknown') }} Profile | GabFlask 
+{% endblock %}
+
+{% block body_content %}
+    <p>Welcome {{ data.get('user',{}).get('name', 'Unknown') }}!</p>
+    <p>This is your profile.</p>
+{% endblock %}

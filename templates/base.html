@@ -16,10 +16,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link {% if current == 'home' %} active {% endif %}" href="/">Home</a>
+                    <a class="nav-link {% if data.get('current') == 'home' %} active {% endif %}" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if current == 'users' %} active {% endif %}" href="/users">Users</a>
+                    <a class="nav-link {% if data.get('current') == 'contacts' %} active {% endif %}" href="/contacts">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if data.get('current') == 'login' %} active {% endif %}" href="/login">Log In</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">On-Dev</a>
