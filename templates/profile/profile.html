@@ -7,4 +7,5 @@
 {% block body_content %}
     <p>Welcome {{ data.get('user',{}).get('name', 'Unknown') }}!</p>
     <p>This is your profile.</p>
+    <button><a href="/logout">LogOut</a></button>
 {% endblock %}
